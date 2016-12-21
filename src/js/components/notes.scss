@@ -1,0 +1,138 @@
+/***RESET CSS***/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+  &:before, &:after {
+    content: '';
+    content: none;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/***RESET CSS***/
+
+body {
+    background: #89609E;
+}
+
+.notes-list {
+    .note-wrapper {
+        padding: 10px;
+    }
+}
+
+.note {
+    background: white;
+    //border: 1px solid sienna;
+    border-radius: 4px;
+    padding: 10px;
+    //min-height: 200px;
+    position: relative;
+    .note-title {
+        border-bottom: 1px dotted #89609E;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+    }
+    .note-text {
+        ul {
+            li {
+                input, span {
+                    margin-top: 0px;
+                    vertical-align: middle;
+                    font-weight: normal;
+                }
+                input {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}
+
+.btn-plain {
+    background: transparent;
+    border: 0px;
+}
+
+.theme-yellow    {background: #FFFF77;}
+.theme-red       {background: #FF9999;}
+.theme-blue      {background: lightblue;}
+
+.note-actions {
+    border-top: 1px dotted silver;
+    margin-top: 10px;
+    position: relative;
+    height: 28px;
+    .note-action {
+        padding-top: 10px;
+        position: absolute;
+    }
+    .note-action-theme {
+        .note-action-theme-overlay {
+            display: none;
+            position: absolute;
+            bottom: 18px;
+            padding: 10px;
+            background: white;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+            transition: visibility 0s ease .218s,opacity .218s linear;
+            width: 160px;
+            .set-theme {
+                vertical-align: top;
+                height: 30px;
+                width: 30px;
+                border-radius: 60px;
+                border: 1px solid rgb(224,224,224);
+                margin: 3px;
+                position: relative;
+                cursor: pointer;
+                &:hover {
+                    border-color: #555555;
+                }
+                &.selected {
+                    &:before {
+                        text-align: center;
+                        width: 30px;
+                        height: 30px;
+                        line-height: 30px;
+                    }
+                }
+            }
+        }
+        &:hover {
+            .note-action-theme-overlay {
+                display: block;
+            }
+        }
+    }
+    .note-action-delete {
+        position: absolute;
+        right: 0px;
+    }
+}

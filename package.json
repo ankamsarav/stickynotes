@@ -19,6 +19,7 @@
     "react": "^0.14.6",
     "react-bootstrap": "^0.30.7",
     "react-dom": "^0.14.6",
+    "react-masonry-component": "^4.4.0",
     "react-redux": "^4.4.5",
     "react-slick": "^0.14.5",
     "redux": "^3.5.2",

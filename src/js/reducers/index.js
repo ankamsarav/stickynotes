@@ -1,5 +1,5 @@
 import { combineReducers } from "redux"
 
-import notes from "./notesReducer"
+import stickynotes from "./notesReducer"
 
-export default combineReducers({notes})
+export default combineReducers({stickynotes})
