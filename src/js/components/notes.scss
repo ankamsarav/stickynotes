@@ -81,9 +81,14 @@ body {
     padding: 0px;
 }
 
-.theme-yellow    {background: #FFFF77;}
-.theme-red       {background: #FF9999;}
-.theme-blue      {background: lightblue;}
+.theme-white    {background: rgb(255, 255, 255);}
+.theme-red      {background: rgb(255, 138, 128);}
+.theme-orange   {background: rgb(255, 209, 128);}
+.theme-yellow   {background: rgb(255, 255, 141);}
+.theme-grey     {background: rgb(207, 216, 220);}
+.theme-blue     {background: rgb(128, 216, 255);}
+.theme-teal     {background: rgb(167, 255, 235);}
+.theme-green    {background: rgb(204, 255, 144);}
 
 .note-actions {
     border-top: 1px dotted silver;

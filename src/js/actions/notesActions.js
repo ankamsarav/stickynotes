@@ -1,11 +1,6 @@
 import axios from "axios";
 
 export function fetchNotes() {
-  /*return function(dispatch) {
-    axios.get("https://api.pinterest.com/v3/pidgets/boards/vicemag/magazine/pins/")
-      .then(response => dispatch({type: "FETCH_BUNDLE_FULFILLED", payload: response.data}) )
-      .catch(err => dispatch({type: "FETCH_BUNDLE_ERROR", payload: err}) )
-  }*/
   return (dispatch) => dispatch({type: "FETCH_NOTES_FULFILLED", payload: data})
 }
 
@@ -22,7 +17,7 @@ export function deleteNote(id) {
 }
 
 const data = {
-  themes: ["white", "yellow", "red", "blue"],
+  themes: ["white", "red", "orange", "yellow", "grey", "blue", "teal", "green"],
   notes: [
     {
       id:1,

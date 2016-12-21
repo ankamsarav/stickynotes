@@ -1,5 +1,7 @@
 import React from "react"
 
+import NoteTheme from "./NoteTheme"
+
 import {Modal,Button,FieldGroup,FormGroup,FormControl,ControlLabel} from 'react-bootstrap';
 
 export default class Note extends React.Component {
@@ -15,21 +17,7 @@ export default class Note extends React.Component {
                 : <div class="note-text">{note.content}</div>
             }
             <div class="note-actions">
-                <div class="note-action note-action-theme">
-                    <i class="fa fa-cog" aria-hidden="true"></i>
-                    <div class="note-action-theme-overlay">
-                        <ul class="list-inline">
-                        {
-                            themes.map((value, index) => 
-                            <li 
-                                key={index} 
-                                class={`set-theme fa theme-${value} ${value==note.theme?'fa-check selected':''}`}
-                                onClick={self.props.onSetTheme.bind(self, note.id, value)}
-                            ></li>)
-                        }
-                        </ul>
-                    </div>
-                </div>
+                <NoteTheme note={note} themes={themes} onSetTheme={self.props.onSetTheme.bind(self)} />
                 <div class="note-action note-action-delete pull-right">
                     <button onClick={self.props.onDelete.bind(self, note.id)} class="btn-plain">
                         <i class="fa fa-trash" aria-hidden="true"></i>
