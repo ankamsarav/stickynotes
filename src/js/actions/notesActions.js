@@ -9,8 +9,8 @@ export function fetchNotes() {
   return (dispatch) => dispatch({type: "FETCH_NOTES_FULFILLED", payload: data})
 }
 
-export function addNote(id) {
-  return (dispatch) => dispatch({type: "ADD_NOTE", payload: id})
+export function addNote(data) {
+  return (dispatch) => dispatch({type: "ADD_NOTE", payload: data})
 }
 
 export function setNoteTheme({id, theme}) {

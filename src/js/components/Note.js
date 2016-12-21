@@ -1,11 +1,8 @@
 import React from "react"
 
-import {Button} from "react-bootstrap"
+import {Modal,Button,FieldGroup,FormGroup,FormControl,ControlLabel} from 'react-bootstrap';
 
 export default class Note extends React.Component {
-  componentWillMount() {
-    
-  }
   render() {
     const self = this;
     const {note,themes} = this.props
@@ -34,7 +31,9 @@ export default class Note extends React.Component {
                     </div>
                 </div>
                 <div class="note-action note-action-delete pull-right">
-                    <button onClick={self.props.onDelete.bind(self, note.id)} class="btn-plain"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                    <button onClick={self.props.onDelete.bind(self, note.id)} class="btn-plain">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </button>
                 </div>
             </div>
         </div>

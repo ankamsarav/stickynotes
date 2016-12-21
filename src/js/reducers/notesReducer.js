@@ -16,7 +16,13 @@ export default function reducer(state={
         return {...state, fetching: false, fetched: true, notes:action.payload.notes, themes:action.payload.themes}
       }
       case "ADD_NOTE": {
-        return {...state, notes: state.notes.concat(action.payload)}
+        var note_new = {
+          id: (new Date()).getTime(),
+          title: action.payload.title,
+          content: action.payload.text,
+          theme: "white"
+        }
+        return {...state, notes: state.notes.concat(note_new)}
       }
       case "DELETE_NOTE": {
         return {...state, notes: state.notes.filter(el => el.id !== action.payload)}

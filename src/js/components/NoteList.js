@@ -2,6 +2,7 @@ import React from "react"
 import { connect } from "react-redux"
 
 import Note from "./Note"
+import ModalAddNote from "./ModalAddNote"
 
 import Masonry from 'react-masonry-component';
 
@@ -17,8 +18,19 @@ export default class NoteList extends React.Component {
     this.props.dispatch(fetchNotes())
   }
 
-  addNote() {
-    this.props.dispatch(addNote());
+  onAddingNote() {
+      this.props.dispatch(setAddingMode(true))
+  }
+
+  onCancelAddNote() {
+      this.props.dispatch(setAddingMode(false))
+  }
+
+  onAddNote(data) {
+    //this.props.dispatch(addNote())
+    //console.log(data);
+    //alert('A name was submitted: ' + this.state.value);
+    this.props.dispatch(addNote(data))
   }
 
   onDeleteNote(ID) {
@@ -34,15 +46,30 @@ export default class NoteList extends React.Component {
   render() {
     const masonryOptions = {transitionDuration: 0};
     const {stickynotes} = this.props
-    return <div class="row notes-list">
+    return <div class="notes-container">
+        <div class="notes-actions">
+            <ModalAddNote onAddNote={this.onAddNote.bind(this)} />
+        </div>
+        <div class="row notes-list">
         <Masonry
             className={'notes-list-content'} // default ''
             options={masonryOptions} // default {}
             disableImagesLoaded={false} // default false
             updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
         >
-            {stickynotes.notes ? stickynotes.notes.map( (note, index) =>  <Note key={index} note={note} themes={stickynotes.themes} onSetTheme={this.onSetTheme.bind(this)} onDelete={this.onDeleteNote.bind(this)} />) : []}
+            {
+                stickynotes.notes.map( (note, index) =>  
+                    <Note 
+                        key={index} 
+                        note={note} 
+                        themes={stickynotes.themes} 
+                        onSetTheme={this.onSetTheme.bind(this)} 
+                        onDelete={this.onDeleteNote.bind(this)} 
+                    />
+                )
+            }
         </Masonry>
+    </div>
     </div>
   }
 }

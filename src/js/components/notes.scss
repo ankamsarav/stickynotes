@@ -78,6 +78,7 @@ body {
 .btn-plain {
     background: transparent;
     border: 0px;
+    padding: 0px;
 }
 
 .theme-yellow    {background: #FFFF77;}
@@ -134,5 +135,15 @@ body {
     .note-action-delete {
         position: absolute;
         right: 0px;
+    }
+}
+
+.notes-actions {
+    padding: 10px 0px 0px;
+    font-size: 20px;
+}
+
+.modal-add-note {
+    .modal-dialog {
     }
 }
