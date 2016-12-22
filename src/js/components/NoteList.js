@@ -3,6 +3,7 @@ import { connect } from "react-redux"
 
 import Note from "./Note"
 import ModalAddNote from "./ModalAddNote"
+import AddNote from "./AddNote"
 
 import Masonry from 'react-masonry-component';
 
@@ -27,9 +28,6 @@ export default class NoteList extends React.Component {
   }
 
   onAddNote(data) {
-    //this.props.dispatch(addNote())
-    //console.log(data);
-    //alert('A name was submitted: ' + this.state.value);
     this.props.dispatch(addNote(data))
   }
 
@@ -47,8 +45,10 @@ export default class NoteList extends React.Component {
     const masonryOptions = {transitionDuration: 0};
     const {stickynotes} = this.props
     return <div class="notes-container">
-        <div class="notes-actions">
-            <ModalAddNote onAddNote={this.onAddNote.bind(this)} />
+        <div class="notes-actions row">
+            <div class="col-xs-offset-2 col-xs-6">
+            <AddNote themes={stickynotes.themes} onAddNote={this.onAddNote.bind(this)} onSetTheme={this.onSetTheme.bind(this)} />
+            </div>
         </div>
         <div class="row notes-list">
         <Masonry

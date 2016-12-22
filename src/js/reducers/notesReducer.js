@@ -20,7 +20,7 @@ export default function reducer(state={
           id: (new Date()).getTime(),
           title: action.payload.title,
           content: action.payload.text,
-          theme: "white"
+          theme: action.payload.theme
         }
         return {...state, notes: state.notes.concat(note_new)}
       }

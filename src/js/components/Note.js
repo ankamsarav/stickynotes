@@ -16,7 +16,7 @@ export default class Note extends React.Component {
                 ? <div class="note-text"><ul class="list-unstyled">{note.list.map((value, index) => <li key={`list_item_${index}`}><label><input type="checkbox" /><span>{value.text}</span></label></li> )}</ul></div> 
                 : <div class="note-text">{note.content}</div>
             }
-            <div class="note-actions">
+            <div class="note-actions clearfix">
                 <NoteTheme note={note} themes={themes} onSetTheme={self.props.onSetTheme.bind(self)} />
                 <div class="note-action note-action-delete pull-right">
                     <button onClick={self.props.onDelete.bind(self, note.id)} class="btn-plain">

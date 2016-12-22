@@ -5,7 +5,7 @@ export default class NoteTheme extends React.Component {
     const self = this;
     const {note,themes} = this.props
     return <div class="note-action note-action-theme">
-        <i class="fa fa-cog" aria-hidden="true"></i>
+        <i class="fa fa-cog note-action-theme-anchor" aria-hidden="true"></i>
         <div class="note-action-theme-overlay">
             <ul class="list-inline">
             {
