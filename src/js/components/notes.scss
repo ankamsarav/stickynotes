@@ -70,6 +70,34 @@ header {
     }
 }
 
+input[type="checkbox"] {
+    display: none;
+    & + label {
+        .checkbox-state {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin: -1px 4px 0 0;
+            vertical-align: middle;
+            border: 1px solid #333;
+            border-radius: 2px;
+            text-align: center;
+            &:before {
+                color: #333;
+            }
+        }
+    }
+    &:checked {
+        & + label {
+            .checkbox-state {
+                &:before {
+                    content: "✔";
+                }
+            }
+        }
+    }
+}
+
 .add-note, .note {
     background: white;
     //border: 1px solid sienna;

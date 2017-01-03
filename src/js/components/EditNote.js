@@ -4,34 +4,16 @@ import NoteTheme from "./NoteTheme"
 
 import {Modal,Button,FormGroup,ControlLabel,FormControl} from "react-bootstrap"
 
-const defaultProps = {
-    title:"",
-    text:"",
-    id: 0,
-    theme:"white",
-    expanded:false
-};
-
-export default class AddNote extends React.Component {
+export default class EditNote extends React.Component {
     constructor(props) {
         super(props);
-        this.state = defaultProps;
-    }
-
-    componentWillMount() {
-        document.addEventListener('click', this.handleClick.bind(this), false);
-    }
-
-    componentWillUnmount() {
-        document.removeEventListener('click', this.handleClick.bind(this), false);
+        this.state = props.note;
     }
 
     handleClick(e) {
         const isClickedInside = this.container.contains(e.target);
         if(!isClickedInside) {this.state = defaultProps}
         this.setState({ expanded : isClickedInside });
-        
-        //if(isClickedInside) {this.input_text.focus()}
     }
 
     onFormSubmit(e) {

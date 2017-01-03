@@ -23,31 +23,31 @@ const data = {
       id:1,
       title: "First",
       content:"This is the first one",
-      theme: "yellow"
+      theme: "white"
     },
     {
       id:2,
       title: "Second",
       list:[{"checked": true, "text":"Go down"}, {"checked": true, "text":"Go up"}],
-      theme: "yellow"
+      theme: "white"
     },
     {
       id:3,
       title: null,
       content:"This is the third one",
-      theme: "yellow"
+      theme: "white"
     },
     {
       id:4,
       title: "Fifth",
       content:"This is the fifth one. Wait... something wrong here... Some one seems to be missing",
-      theme: "yellow"
+      theme: "white"
     },
     {
       id:5,
       title: "Fourth",
       content:"This is the fourth one. I am a little late",
-      theme: "yellow"
+      theme: "white"
     }
   ]
 }
