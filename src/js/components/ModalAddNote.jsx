@@ -14,7 +14,6 @@ export default class ModalAddNote extends React.Component {
 
     onFormSubmit(e) {
         e.preventDefault()
-        //console.log(this.state)
         this.props.onAddNote(this.state);
         this.setState({ showModal: false });
     }
@@ -33,7 +32,7 @@ export default class ModalAddNote extends React.Component {
     }
   render() {
     const self = this;
-    return <div>
+    return (<div>
         <button class="btn-plain" onClick={this.open.bind(this)}>
             <i class="fa fa-plus fa-3" aria-hidden="true"></i>
         </button>
@@ -53,6 +52,6 @@ export default class ModalAddNote extends React.Component {
                 </form>
             </Modal.Body>
         </Modal>
-    </div>
+    </div>)
   }
 }
