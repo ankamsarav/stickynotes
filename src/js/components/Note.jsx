@@ -4,11 +4,8 @@ import NoteTheme from "./NoteTheme"
 
 import {Modal,Button,FieldGroup,FormGroup,FormControl,ControlLabel} from 'react-bootstrap';
 
-export default class Note extends React.Component {
-  render() {
-    const self = this;
-    const {note,themes} = this.props
-    return <div class="note-wrapper col-xs-6 col-md-3 col-lg-3" data-key={note.id}>
+const Note = ({note,themes, onSetTheme, onDelete}) => (
+    <div class="note-wrapper col-xs-6 col-md-3 col-lg-3" data-key={note.id}>
         <div class={`note theme-${note.theme}`}>
             {note.title ? <div class="note-title">{note.title}</div>: ''}
             {
@@ -17,14 +14,15 @@ export default class Note extends React.Component {
                 : <div class="note-text">{note.content}</div>
             }
             <div class="note-actions clearfix">
-                <NoteTheme note={note} themes={themes} onSetTheme={self.props.onSetTheme.bind(self)} />
+                <NoteTheme note={note} themes={themes} onSetTheme={onSetTheme} />
                 <div class="note-action note-action-delete pull-right">
-                    <button onClick={self.props.onDelete.bind(self, note.id)} class="btn-plain">
+                    <button onClick={() => onDelete(note.id)} class="btn-plain">
                         <i class="fa fa-trash" aria-hidden="true"></i>
                     </button>
                 </div>
             </div>
         </div>
     </div>
-  }
-}
+)
+
+export default Note

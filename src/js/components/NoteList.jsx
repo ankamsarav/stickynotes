@@ -44,7 +44,7 @@ export default class NoteList extends React.Component {
   render() {
     const masonryOptions = {transitionDuration: 0};
     const {stickynotes} = this.props
-    return <div class="notes-container">
+    return (<div class="notes-container">
         <div class="notes-actions row">
             <div class="col-xs-offset-2 col-xs-6">
             <AddNote themes={stickynotes.themes} onAddNote={this.onAddNote.bind(this)} onSetTheme={this.onSetTheme.bind(this)} />
@@ -70,6 +70,6 @@ export default class NoteList extends React.Component {
             }
         </Masonry>
     </div>
-    </div>
+    </div>)
   }
 }

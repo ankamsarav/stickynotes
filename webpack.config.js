@@ -27,6 +27,9 @@ module.exports = {
     path: __dirname + "/src/",
     filename: "client.min.js"
   },
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
   plugins: debug ? [] : [
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
